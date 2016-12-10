@@ -12,4 +12,4 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-FROM samsungmicroaspnet/mysql:latest
+FROM registry.ng.bluemix.net/samsungmicroaspnet/mysql:latest
