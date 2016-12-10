@@ -1,8 +1,8 @@
+---
 applications:
 - path: .
   memory: 256M
   instances: 1
-  domain: mybluemix.net
-#  name: AspBasic
-#  host: AspBasic
   disk_quota: 1024M
+  name: SEC-ASP-myhong1023-2117
+  host: SEC-ASP-myhong1023-2117
