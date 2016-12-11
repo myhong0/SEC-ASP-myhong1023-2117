@@ -4,5 +4,5 @@ applications:
   memory: 256M
   instances: 1
   disk_quota: 1024M
-  name: SEC-ASP-myhong1023-2117
-  host: SEC-ASP-myhong1023-2117
+  name: SEC-ASP-myhong-test-1211
+  host: SEC-ASP-myhong-test-1211
