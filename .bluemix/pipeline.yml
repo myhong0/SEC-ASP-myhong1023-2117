@@ -31,11 +31,13 @@ stages:
 
       # View logs
       #cf logs "${CF_APP}" --recent
-- name: DB image build
+- name: 'DB Image Build '
   inputs:
   - type: job
     stage: Build Stage
     job: Build
+  triggers:
+  - type: stage
   jobs:
   - name: container build
     type: builder
@@ -78,10 +80,10 @@ stages:
       # Copy any artifacts that will be needed for deployment and testing to $WORKSPACE\
       \    #\n######################################################################################\n\
       echo \"IMAGE_NAME=${FULL_REPOSITORY_NAME}\" >> $ARCHIVE_DIR/build.properties"
-- name: DB install
+- name: DB Install
   inputs:
   - type: job
-    stage: DB image build 
+    stage: 'DB Image Build '
     job: container build
   triggers:
   - type: stage
@@ -95,8 +97,8 @@ stages:
       space: Staging
     PORT: '80'
     OPTIONAL_ARGS: '--env MYSQL_ROOT_PASSWORD=bluemix '
-    DEPLOY_TYPE: red_black
     CONTAINER_NAME: mysql_test
+    DEPLOY_TYPE: red_black
     COMMAND: "#!/bin/bash\n# The following are some example deployment scripts.  Use\
       \ these as is or fork them and include your updates here:\necho -e \"${label_color}Starting\
       \ deployment script${no_color}\"\n\n\n# To view/fork this script goto: https://github.com/Osthanes/deployscripts\n\
