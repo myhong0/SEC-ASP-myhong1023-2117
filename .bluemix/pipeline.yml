@@ -31,7 +31,7 @@ stages:
 
       # View logs
       #cf logs "${CF_APP}" --recent
-- name: DB설치
+- name: DB image build
   inputs:
   - type: job
     stage: Build Stage
