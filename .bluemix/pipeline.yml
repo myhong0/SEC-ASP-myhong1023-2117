@@ -81,12 +81,12 @@ stages:
 - name: DB Deploy
   inputs:
   - type: job
-    stage: DB설치
+    stage: DB image build 
     job: container build
   triggers:
   - type: stage
   jobs:
-  - name: DB배치
+  - name: DB install
     type: deployer
     extension_id: ibm.devops.services.pipeline.docker.deploy.ice
     target:
